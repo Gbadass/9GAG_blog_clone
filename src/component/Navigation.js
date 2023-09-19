@@ -61,7 +61,7 @@ function Navigation(){
 </div>
 <div className="post-frame">
 <MdCreate className="write-icon"/>
-<p className="post-p">post</p>
+<p className="post-p">Post</p>
 </div>
 
     </div>
