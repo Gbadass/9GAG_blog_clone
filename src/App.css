@@ -1,38 +1,117 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Source Sans Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav{
+  height: 50px;
+  background-color: #141414;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header{
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+padding-top: 8px;
+  
+}
+
+.menu-icon{
+  color: white;
+  font-size: 25px;
+  margin-top: 2px;
+}
+
+.navbar-div01{
+  display: flex;
+  
+
+}
+
+.navbar-div02{
+display: flex;
+}
+
+.navbar-div01-h1{
+  color: white;
+  margin-left: 20px;
+  font-size: 22px;
+  text-decoration: none;
+  margin-top: 1px;
+}
+
+.emoji-frame{
+
+}
+
+.emoji-div{
+  display: flex;
+  margin-top: 5px;
+  margin-left: 20px;
+}
+
+.shuffle-p{
+  color: white;
+  margin-left: 4px;
+  margin-top: 1px;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.search-icon{
+  color: grey;
+  font-size: 25px;
+  
+}
+
+.notification-icon{
+  color: grey;
+  font-size: 20px;
+  margin-top: 3px;
+  
+
+}
+
+.icon-div{
+  margin-left: 20px;
+  margin-top: 3px;
+
+}
+
+.profile-frame{
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: grey;
+  margin-left: 20px;
+}
+
+.post-frame{
+  width: 80px;
+  height: 35px;
+  background-color: #0077ff;
+  border-radius: 30px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.write-icon{
+  margin-left: 12px;
+  font-size: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.post-p{
+  margin-right: 12px;
+  color: white;
 }
