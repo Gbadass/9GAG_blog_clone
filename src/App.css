@@ -492,3 +492,266 @@ overflow: scroll;
   height: 100%;
   width: 100%;
  }
+
+ /* createpost css */
+
+ .section02{
+  background-color: #141414;
+  height: 1000px;
+  padding-top: 50px;
+ }
+
+ .section02-h01{
+color: white;
+
+ }
+
+ .section02-innerd1{
+  display: grid;
+  grid-template-columns: 640px 340px;
+  margin-left: 150px;
+  margin-top: 50px;
+ }
+
+ .section02-innerd1-div1{
+  /* border: 1px solid white; */
+  height: 750px;
+ }
+
+ .section02-innerd1-div1-innerd{
+  border: 0.5px solid rgb(82, 82, 82);
+  height: 700px;
+  margin-top: 20px;
+  border-radius: 10px;
+ }
+
+ .section02-innerd1-div1-innerd-innerdiv1{
+  border-top: 1px solid rgb(82, 82, 82);
+  
+ }
+
+ .images-videos-text-div{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 130px;
+  margin-right: 120px;
+
+  
+ }
+
+ .images-videos-text-div-p1{
+  color: white;
+  margin-top: 20px;
+  font-size: 15px;
+  border-bottom: 3px solid white;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+ }
+
+ .images-videos-text-div-p2{
+  color: white;
+  margin-top: 20px;
+  font-size: 15px;
+  /* border-bottom: 3px solid white;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px; */
+ }
+
+ .section02-innerd1-div1-innerd-innerdiv1-innerd{
+  border: 0.5px solid rgb(82, 82, 82);
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 40px;
+  height: 50px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ }
+
+ .section02-innerd1-div1-innerd-innerdiv1-innerd p{
+  color: white;
+  font-size: 14px;
+  margin-left: 20px;
+ }
+
+ .caret-down{
+  color: grey;
+  margin-right: 20px;
+ }
+
+ .section02-innerd1-div1-innerd-innerdiv1-innerd-input{
+  width: 550px;
+  margin-left: 40px;
+  margin-top: 20px;
+  background-color: #141414;
+  border: 0.5px solid rgb(82, 82, 82);
+  height: 45px;
+  border-radius: 8px;
+  color: white;
+ }
+
+ .section02-innerd1-div1-innerd-innerdiv1-innerd-input::placeholder{
+  font-size: 20px;
+  padding-left: 20px;
+ }
+
+ .image-insert-cover{
+  height: 330px;
+  background-color: black;
+  margin-top: 20px;
+  width: 86%;
+  margin-left: 42px;
+  border-radius: 8px;
+  border: 0.5px solid rgb(82, 82, 82);
+ }
+
+ .image-icon{
+  color: white;
+  font-size: 45px;
+ }
+
+ .centered-div{
+
+  text-align: center;
+  display: block;
+  align-items: center;
+  margin-top: 45px;
+  
+ }
+
+ .centered-div-p1{
+  color: white;
+  font-size: 14px;
+  margin-top: 15px;
+ }
+
+ .centered-div-image-input{
+  margin-top: 15px;
+  /* background-color: blue; */
+  color: white;
+ }
+
+.centered-div-or{
+  color: grey;
+  margin-top: 15px;
+}
+
+
+.input-and-buttonn{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  align-items: center;
+}
+
+.input-and-buttonn input{
+  width: 320px;
+  background-color: #141414;
+  border: 0.5px solid rgb(82, 82, 82);
+  height: 35px;
+  border-radius: 8px;
+  padding-left: 10px;
+
+}
+
+.buttonn-divv button{
+  margin-left: 15px;
+  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: rgb(83, 83, 83);
+  background-color: #141414;
+  border: 0.5px solid rgb(82, 82, 82)
+
+}
+
+
+.support-p{
+  color: grey;
+  font-size: 12px;
+  margin-top: 10px;
+  margin-left: 70px;
+}
+
+.choose-file-button{
+  background-color: #0077ff;
+  margin-top: 15px;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.down-input{
+  margin-top: 15px;
+  height: 45px;
+  margin-left: 40px;
+  border-radius: 8px;
+  width: 550px;
+  background-color: #141414;
+  border: 0.5px solid rgb(82, 82, 82)
+}
+
+.post-butonn-div{
+  margin-left: 40px;
+  text-align: end;
+  margin-right: 50px;
+}
+
+.post-butonn-div button{
+padding: 10px;
+margin-top: 10px;
+padding-left: 20px;
+padding-right: 20px;
+border-radius: 20px;
+border: none;
+color: grey;
+background-color: #06458d;
+
+}
+
+
+.section02-innerd1-div2{
+  border: 0.5px solid rgb(82, 82, 82);
+  height: 460px;
+  margin-left: 30px;
+}
+
+.section02-innerd1-div2-innerd-h1{
+  color: white;
+  font-size: 18px;
+}
+
+.section02-innerd1-div2-innerd{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+
+
+.caret-downn-1{
+  color: grey;
+ }
+
+ .rules-text-div{
+  margin-left: 20px;
+  margin-top: 40px;
+ }
+
+ .rules-text-div-ol{
+  color: white;
+  margin-left: 20px;
+ }
+
+ .rules-text-div-ol li{
+  margin-top: 30px;
+ }

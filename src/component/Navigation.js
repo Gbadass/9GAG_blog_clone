@@ -4,7 +4,7 @@ import { FaSistrix } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { MdCreate } from "react-icons/md";
-import Section1 from "./Section1";
+
 
 
 
@@ -69,7 +69,6 @@ function Navigation(){
     </div>
   </header>
 </nav>
-<Section1/>
     </div>
   )
 }
