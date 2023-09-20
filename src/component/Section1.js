@@ -3,6 +3,17 @@ import { BiSolidHome} from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { BiSolidBarChartAlt2,BiTrendingUp,BiTimeFive } from "react-icons/bi";
 import { BsTag,BsPin } from "react-icons/bs";
+import {FaEllipsisVertical,FaXmark,FaWhatsapp,FaFacebookMessenger } from "react-icons/fa6";
+import { ImArrowUp,ImArrowDown } from "react-icons/im";
+import { FaRegCommentAlt,FaRegBookmark} from "react-icons/fa";
+import { LiaBeerSolid } from "react-icons/lia";
+import { ImRedo2 } from "react-icons/im";
+
+
+
+
+
+
 import image01 from "./images/1688528667.8369_5YWy3Y_100x100.jpg"
  import image02 from "./images/1683959060.7184_AvuQUL_100x100.jpg"
  import image03 from "./images/1683179392.1419_yMavUr_100x100.jpg"
@@ -36,7 +47,13 @@ import image01 from "./images/1688528667.8369_5YWy3Y_100x100.jpg"
  import image027 from "./images/1685593389.6421_XAHana_100x100.jpg"
  import image028 from "./images/1685593026.5861_YqePyN_100x100.jpg"
  import image029 from "./images/1683134128.0915_yMa9yN_100x100.jpg"
- 
+
+ import image030 from "./images/422a147f25cc6e22ca812e91576fd6404a4339885697a2a88f57281db890e2d5.jpeg"
+ import image031 from "./images/1683178299.2874_je3YRE_100x100.jpg"
+ import image032 from "./images/aEqj7De_460swp.webp"
+ import image033 from "./images/4af7428c-414c-42c2-9db8-7b612cfcc4ed.png"
+ import image034 from "./images/2160713664247422441.jpeg"
+ import image035 from "./images/7103302163924574107.jpeg"
 
 
 function Section1(){
@@ -340,8 +357,121 @@ function Section1(){
           </div>
         </div>
         <div className="section01-sect-div2">
+          <div className="section01-sect-div2-inner1">
+            <Link className="section01-sect-div2-inner1-link">
+            Home
+            </Link>
+            <Link className="section01-sect-div2-inner1-link">
+            Top
+            </Link>
+            <Link className="section01-sect-div2-inner1-link">
+            Trending
+            </Link>
+            <Link className="section01-sect-div2-inner1-link">
+            Fresh
+            </Link>
+          </div>
+          <hr className="category-selected-line" />
+          <hr className="category-line" />
 
+          <img className="ad-image" src={image030} alt="" />
+          <div className="tips-category">
+            <button className="tips-category-btn">apple</button>
+            <button className="tips-category-btn">iphone</button>
+            <button className="tips-category-btn">stick</button>
+            <button className="tips-category-btn">one piece</button>
+            <button className="tips-category-btn">trump</button>
+            <button className="tips-category-btn">latest news</button>
+            <button className="tips-category-btn">most commented</button>
+
+          </div>
+          <div className="tips-category">
+             <button className="tips-category-btn">weekly highlights</button> 
+          </div>
+
+          <div className="blog-post-div">
+            <div className="blog-post-div-inner1">
+              <div className="blog-post-div-inner1-div1">
+              <img className="blog-post-image01" src={image031} alt="" />
+              <p className="blog-post-div-inner1-p1">Humor</p>
+              <p className="blog-post-div-inner1-p2">16h</p>
+              <p className="blog-post-div-inner1-p2">cheared by</p>
+              </div> 
+              <div className="blog-post-div-inner1-div2">
+                <FaEllipsisVertical className="mini-menu-icon"/>
+                <FaXmark className="cancle-icon"/>
+              </div>
+            </div>
+            <h1 className="blog-post-div-h1">have you ever tried to eat clock?</h1>
+            <div className="blog-post-div-inner2">
+              <img className="blog-post-div-inner2-img" src={image032} alt="" />
+            </div>
+            <div className="tips-category2">
+            <button className="tips-category-btn">apple</button>
+            <button className="tips-category-btn">iphone</button>
+            <button className="tips-category-btn">stick</button>
+            <button className="tips-category-btn">one piece</button>
+            {/* <button className="tips-category-btn">trump</button>
+            <button className="tips-category-btn">latest news</button>
+            <button className="tips-category-btn">most commented</button> */}
+
+          </div>
+            <div className="comments-and-like-div">
+              <div className="comments-and-like-div-innerd1">
+                <ImArrowUp className="comments-and-like-div-innerd1-arrow-up"/>
+                <p className="comments-and-like-div-innerd1-p1">5.9K</p>
+                <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/>
+              </div>
+              <div className="comments-and-like-div-innerd2">
+                <FaRegCommentAlt className="comments-and-like-div-innerd1-arrow-up"/>
+                <p className="comments-and-like-div-innerd1-p1">5.9K</p>
+                {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
+                <p className="comments-and-like-div-innerd1-p1">Comments</p>
+              
+              </div>
+              <div className="comments-and-like-div-innerd2">
+                <LiaBeerSolid className="comments-and-like-div-innerd1-cheers"/>
+                {/* <p className="comments-and-like-div-innerd1-p1">5.9K</p> */}
+                {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
+                <p className="comments-and-like-div-innerd1-p1">Cheers</p>
+                
+              </div>
+              <div className="comments-and-like-div-innerd2">
+                <FaRegBookmark className="comments-and-like-div-innerd1-save"/>
+                {/* <p className="comments-and-like-div-innerd1-p1">5.9K</p> */}
+                {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
+                <p className="comments-and-like-div-innerd1-p1">Save</p>
+                
+              </div>
+
+              <div className="comments-and-like-social-divs">
+                  <FaWhatsapp className="comments-and-like-social-divs-whatsapp-icon"/>
+                  <FaFacebookMessenger className="comments-and-like-social-divs-messenger-icon"/>
+              </div>
+              <div className="comments-and-like-share-divs">
+                <ImRedo2 className="send-arrow"/>
+                <p className="comments-and-like-div-innerd1-p1">Share</p>
+              </div>
+              
+            </div>
+            <hr className="post-bottom-hr"/>
+          </div>
+    
         </div>
+
+<div className="section01-sect-div3">
+  <div className="airtel-ads-div">
+  <img src={image033} alt="" />
+  </div>
+  <div className="airtel-ads-div">
+  <img src={image034} alt="" />
+  </div>
+  <div className="airtel-ads-div">
+  <img src={image035} alt="" />
+  </div>
+ 
+</div>
+        
       </section>
     </div>
   )
