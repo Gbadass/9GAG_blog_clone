@@ -1,23 +1,21 @@
-
 import { Link } from "react-router-dom";
 import { FaSistrix } from "react-icons/fa";
 import { IoMdMenu } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { MdCreate } from "react-icons/md";
+import { useState } from "react";
 
 
 
+function Landingpagenavbar(){
 
-
-
-
-
-function Navigation(){
-
-
+  const [modal, setModal]= useState(false)
+   const toggleModal = () => {
+    setModal(!modal)
+   }
 
   return(
-    <div>
+<div>
 <nav>
   <header>
     <div className="navbar-div01">
@@ -60,7 +58,14 @@ function Navigation(){
       <FaSistrix className="search-icon"/>
       </div>
 <div className="icon-div">
-<FaBell className="notification-icon"/>
+{/* <FaBell className="notification-icon"/> */}
+
+<div className="sign-login-link-covers">
+<Link className="sign-login-link-covers-link" onClick={toggleModal}>Sign Up</Link>
+<p className="sign-login-link-covers-p">/</p>
+<Link className="sign-login-link-covers-link">Log In</Link>
+
+</div>
 </div>
 <div className="profile-frame">
 
@@ -73,8 +78,8 @@ function Navigation(){
     </div>
   </header>
 </nav>
-    </div>
+</div>
   )
 }
 
-export default Navigation;
+export default Landingpagenavbar
