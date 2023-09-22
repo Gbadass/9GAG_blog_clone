@@ -6,7 +6,7 @@ import Navigation from "./component/Navigation";
 import Home from "./component/Home";
 import Landingpage from "./component/Landingpage";
 import Landingpagenavbar from "./component/Landingpagenavbar";
-// import Section1 from "./component/Section1"
+import Profile from "./component/Profile";
 
 
 
@@ -20,6 +20,7 @@ function App(){
         <Route path="/createpost" element={<Createpost/>}/>
         <Route path="/landingpage" element={<Landingpage/>}/>
         <Route path="/landingpagenavbar" element={<Landingpagenavbar/>}/>
+        <Route path="/profile" element={<Profile/>}/>
        
         {/* <Route path="/" element={<Section1/>}/> */}
 
