@@ -523,10 +523,7 @@ color: white;
   border-radius: 10px;
  }
 
- .section02-innerd1-div1-innerd-innerdiv1{
-  border-top: 1px solid rgb(82, 82, 82);
-  
- }
+
 
  .images-videos-text-div{
   display: flex;
@@ -541,20 +538,20 @@ color: white;
   color: white;
   margin-top: 20px;
   font-size: 15px;
-  border-bottom: 3px solid white;
+ 
   padding-bottom: 15px;
   padding-left: 15px;
-  padding-right: 15px;
+  padding-right: 15px; 
  }
 
  .images-videos-text-div-p2{
   color: white;
   margin-top: 20px;
   font-size: 15px;
-  /* border-bottom: 3px solid white;
-  padding-bottom: 15px;
+ 
+   padding-bottom: 15px;
   padding-left: 15px;
-  padding-right: 15px; */
+  padding-right: 15px; 
  }
 
  .section02-innerd1-div1-innerd-innerdiv1-innerd{
@@ -1050,3 +1047,79 @@ text-decoration: none;
   margin-left: 220px;
   margin-top: 20px;
  }
+
+ .createpost-link{
+  text-decoration: none;
+ }
+
+ .create-post-interest-div{
+  position: absolute;
+  height: 415px;
+  border: 0.5px solid rgb(82, 82, 82);
+  width: 300px;
+  left: 190px;
+  background-color: #141414;
+  border-radius: 10px;
+  top: 297px;
+  z-index: 1;
+ }
+
+ .create-post-interest-div-inner1{
+  display: flex;
+  margin-left: 20px;
+  margin-top: 20px;
+  align-items: center;
+ }
+
+ .create-post-interest-div-inner1-img{
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+ }
+
+ .create-post-interest-div-inner1-p1{
+  color: white;
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 14px;
+ }
+
+ .section02-innerd1-div1-innerd-innerdiv1{
+  border-top: 1px solid rgb(82, 82, 82);
+  position: relative;
+  
+ }
+
+
+ .image-insert-cover02{
+  height: 330px;
+  background-color:#141414;
+  width: 86%;
+  border-radius: 8px;
+  border: 0.5px solid rgb(82, 82, 82);
+  position: absolute;
+  color: white;
+  padding: 0 auto;
+  top: 175px;
+  left: 42px;
+ }
+
+
+ .down-input02{
+  margin-top: 365px;
+  height: 45px;
+  margin-left: 40px;
+  border-radius: 8px;
+  width: 550px;
+  background-color: #141414;
+  border: 0.5px solid rgb(82, 82, 82)
+}
+
+
+.add-border-bottom{
+  border-bottom: 3px solid white;
+
+}
+
+
+

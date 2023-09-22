@@ -65,10 +65,12 @@ function Navigation(){
 <div className="profile-frame">
 
 </div>
+<Link to="/createpost" className="createpost-link">
 <div className="post-frame">
 <MdCreate className="write-icon"/>
 <p className="post-p">Post</p>
 </div>
+</Link>
 
     </div>
   </header>

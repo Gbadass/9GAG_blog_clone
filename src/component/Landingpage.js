@@ -300,10 +300,13 @@ function Landingpage() {
               </div>
             </div>
             <div className="profile-frame"></div>
+       
             <div className="post-frame" onClick={toggleModal}>
               <MdCreate className="write-icon" />
               <p className="post-p">Post</p>
             </div>
+       
+
           </div>
         </header>
       </nav>
