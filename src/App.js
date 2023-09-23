@@ -7,6 +7,7 @@ import Home from "./component/Home";
 import Landingpage from "./component/Landingpage";
 import Landingpagenavbar from "./component/Landingpagenavbar";
 import Profile from "./component/Profile";
+import Singlepostpage from "./component/Singlepostpage";
 
 
 
@@ -21,6 +22,7 @@ function App(){
         <Route path="/landingpage" element={<Landingpage/>}/>
         <Route path="/landingpagenavbar" element={<Landingpagenavbar/>}/>
         <Route path="/profile" element={<Profile/>}/>
+        <Route path="/singlepostpage" element={<Singlepostpage/>}/>
        
         {/* <Route path="/" element={<Section1/>}/> */}
 

@@ -5,7 +5,7 @@ import { BiSolidBarChartAlt2,BiTrendingUp,BiTimeFive } from "react-icons/bi";
 import { BsTag,BsPin } from "react-icons/bs";
 import {FaEllipsisVertical,FaXmark,FaWhatsapp,FaFacebookMessenger } from "react-icons/fa6";
 import { ImArrowUp,ImArrowDown } from "react-icons/im";
-import { FaRegCommentAlt,FaRegBookmark} from "react-icons/fa";
+import {FaRegBookmark,FaCaretDown} from "react-icons/fa";
 import { LiaBeerSolid } from "react-icons/lia";
 import { ImRedo2 } from "react-icons/im";
 
@@ -54,12 +54,17 @@ import image01 from "./images/1688528667.8369_5YWy3Y_100x100.jpg"
  import image033 from "./images/4af7428c-414c-42c2-9db8-7b612cfcc4ed.png"
  import image034 from "./images/2160713664247422441.jpeg"
  import image035 from "./images/7103302163924574107.jpeg"
+ import image036 from "./images/7103302163924574107.jpeg"
+ import Navigation from "./Navigation";
 
 
-function Section1(){
+
+
+function Singlepost() {
   return(
-    <div>
-      <section className="section01-sect">
+<div>
+  <Navigation/>
+<section className="section01-sect">
         <div className="section01-sect-div1">
           <div className="section01-sect-div1-innnerd">
               <div className="section01-sect-div1-innnerd-innerdiv1">
@@ -391,46 +396,39 @@ function Section1(){
 
           <div className="blog-post-div">
             <div className="blog-post-div-inner1">
-              <div className="blog-post-div-inner1-div1">
+              <div className="blog-post-div-inner1-div102">
               <img className="blog-post-image01" src={image031} alt="" />
-              <p className="blog-post-div-inner1-p1">Humor</p>
-              <p className="blog-post-div-inner1-p2">16h</p>
-              <p className="blog-post-div-inner1-p2">cheared by</p>
+              <div className="blog-post-div-inner1-div102-innerd1">
+              <p className="blog-post-div-inner1-p1">Humor</p> 
+              <p className="blog-post-div-inner1-p2-02"> sindriragners 16h</p>
+              </div>
+      
+  
               </div> 
+            
               <div className="blog-post-div-inner1-div2">
                 <FaEllipsisVertical className="mini-menu-icon"/>
                 <FaXmark className="cancle-icon"/>
               </div>
             </div>
-            <Link className="singlepost-link" to="/singlepostpage">
+            <p className="blog-post-div-inner1-p2-03">cheared by</p>
             <h1 className="blog-post-div-h1">have you ever tried to eat clock?</h1>
             <div className="blog-post-div-inner2">
               <img className="blog-post-div-inner2-img" src={image032} alt="" />
             </div>
-            </Link>
-
             <div className="tips-category2">
             <button className="tips-category-btn">apple</button>
             <button className="tips-category-btn">iphone</button>
             <button className="tips-category-btn">stick</button>
             <button className="tips-category-btn">one piece</button>
-            {/* <button className="tips-category-btn">trump</button>
-            <button className="tips-category-btn">latest news</button>
-            <button className="tips-category-btn">most commented</button> */}
 
           </div>
-            <div className="comments-and-like-div">
+            <div className="comments-and-like-div02">
+              <div className="comments-and-like-div-innerd1">
               <div className="comments-and-like-div-innerd1">
                 <ImArrowUp className="comments-and-like-div-innerd1-arrow-up"/>
                 <p className="comments-and-like-div-innerd1-p1">5.9K</p>
                 <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/>
-              </div>
-              <div className="comments-and-like-div-innerd2">
-                <FaRegCommentAlt className="comments-and-like-div-innerd1-arrow-up"/>
-                <p className="comments-and-like-div-innerd1-p1">5.9K</p>
-                {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
-                <p className="comments-and-like-div-innerd1-p1">Comments</p>
-              
               </div>
               <div className="comments-and-like-div-innerd2">
                 <LiaBeerSolid className="comments-and-like-div-innerd1-cheers"/>
@@ -447,6 +445,8 @@ function Section1(){
                 
               </div>
 
+              </div>
+              <div className="comments-and-like-div-innerd2">
               <div className="comments-and-like-social-divs">
                   <FaWhatsapp className="comments-and-like-social-divs-whatsapp-icon"/>
                   <FaFacebookMessenger className="comments-and-like-social-divs-messenger-icon"/>
@@ -456,10 +456,63 @@ function Section1(){
                 <p className="comments-and-like-div-innerd1-p1">Share</p>
               </div>
               
+              </div>
+
+
             </div>
+            <div className="comments-and-like-div02-comment-div">
+                <div className="comments-and-like-div02-button-divs">
+                    <button className="comments-and-like-div02-button-divs-btn"> <span>Comments</span> 234 </button>
+                    <button className="comments-and-like-div02-button-divs-btn2">Related</button>
+                </div>
+              </div>
             <hr className="post-bottom-hr"/>
+
+            <div className="comment-section-bottom">
+              <div className="comment-section-bottom-displayflex">
+              <p className="comment-section-bottom-p1">Hot comments</p>
+              <FaCaretDown className="comment-section-bottom-caret-icon"/>
+              </div>
+              <p className="community-guidelines-p1">Remember to keep comments respectful and to follow our <span>Community Guidelines.</span></p>
+
+              <div className="comment-section-bottom-innerd2">
+                <img  src={image036} alt="" />
+
+                <div className="comment-section-bottom-innerd2-div1">
+                <input type="text" placeholder="Leave a comment" />
+                </div>
+
+              </div>
+
+              <div className="comment-section-bottom-commentbody">
+              <img  src={image028} alt="" />
+                <div className="comment-section-bottom-commentbody-innerd">
+                  <p className="gbadass-bold">gbadass <span>13h</span></p>
+                  <p className="comment-section-bottom-commentbody-comments">And due to the small population of Iceland 60% of the viewers said: “oh, uncle Sigurður <br /> threw a tantrum again”</p>
+
+                  <div className="comment-section-bottom-reply-and-icons">
+                <p>Reply</p>
+                <div className="comments-and-like-div-innerd1-02">
+                <ImArrowUp className="comments-and-like-div-innerd1-arrow-up-02"/>
+                <p className="comments-and-like-div-innerd1-p1-02">5.9K</p>
+                <ImArrowDown className="comments-and-like-div-innerd1-arrow-down-02"/>
+                <p className="comments-and-like-div-innerd1-p1-02">1</p>
+              </div>
+              </div>
+              <div className="comment-section-bottom-viewmore-comment-div">
+              <FaCaretDown className="comment-section-bottom-caret-icon2"/>
+              <p>View <span>9</span> replies</p>
+              </div>
+                </div>
+              </div>
+
+
+
+
+            </div>
+
           </div>
-    
+
         </div>
 
 <div className="section01-sect-div3">
@@ -476,8 +529,8 @@ function Section1(){
 </div>
         
       </section>
-    </div>
+</div>
   )
 }
 
-export default Section1
+export default Singlepost

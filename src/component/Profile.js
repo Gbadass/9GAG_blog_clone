@@ -402,7 +402,7 @@ const toogleSaved =() =>{
               <p className={`profile-section01-sect-div2-innerd2-div1-p1 ${comments ? "add-border-bottom" : ""} ${comments ? "color-white" : ""}`} onClick={toogleComments}>Comments</p>
               <p className={`profile-section01-sect-div2-innerd2-div1-p1 ${saved ? "add-border-bottom"  : ""} ${saved ? "color-white" : ""} `} onClick={ toogleSaved}>Saved</p>
             </div>
-            <FaEllipsisVertical className="mini-menu-icon" />
+            <FaEllipsisVertical className="mini-menu-icon2" />
           </div>
           <hr className="profile-section01-sect-div2-innerd2-hr"/>
           <div className="profile-section01-sect-relative-div">
