@@ -371,8 +371,8 @@ function Section1(){
             Fresh
             </Link>
           </div>
-          <hr className="category-selected-line" />
-          <hr className="category-line" />
+          {/* <hr className="category-selected-line" />  */}
+          <hr className="category-line" /> 
 
           <img className="ad-image" src={image030} alt="" />
           <div className="tips-category">
@@ -383,11 +383,12 @@ function Section1(){
             <button className="tips-category-btn">trump</button>
             <button className="tips-category-btn">latest news</button>
             <button className="tips-category-btn">most commented</button>
+            <button className="tips-category-btn">weekly highlights</button> 
 
           </div>
-          <div className="tips-category">
-             <button className="tips-category-btn">weekly highlights</button> 
-          </div>
+          {/* <div className="tips-category">
+
+          </div> */}
 
           <div className="blog-post-div">
             <div className="blog-post-div-inner1">
@@ -429,25 +430,21 @@ function Section1(){
                 <FaRegCommentAlt className="comments-and-like-div-innerd1-arrow-up"/>
                 <p className="comments-and-like-div-innerd1-p1">5.9K</p>
                 {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
-                <p className="comments-and-like-div-innerd1-p1">Comments</p>
+                <p className="comments-and-like-div-innerd1-p1-1">Comments</p>
               
               </div>
               <div className="comments-and-like-div-innerd2">
                 <LiaBeerSolid className="comments-and-like-div-innerd1-cheers"/>
-                {/* <p className="comments-and-like-div-innerd1-p1">5.9K</p> */}
-                {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
-                <p className="comments-and-like-div-innerd1-p1">Cheers</p>
+                <p className="comments-and-like-div-innerd1-p1-1">Cheers</p>
                 
               </div>
-              <div className="comments-and-like-div-innerd2">
+              <div className="comments-and-like-div-innerd2-1">
                 <FaRegBookmark className="comments-and-like-div-innerd1-save"/>
-                {/* <p className="comments-and-like-div-innerd1-p1">5.9K</p> */}
-                {/* <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/> */}
                 <p className="comments-and-like-div-innerd1-p1">Save</p>
                 
               </div>
 
-              <div className="comments-and-like-social-divs">
+              <div className="comments-and-like-social-divs-1">
                   <FaWhatsapp className="comments-and-like-social-divs-whatsapp-icon"/>
                   <FaFacebookMessenger className="comments-and-like-social-divs-messenger-icon"/>
               </div>

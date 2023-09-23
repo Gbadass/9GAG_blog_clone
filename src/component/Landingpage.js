@@ -316,7 +316,7 @@ function Landingpage() {
                   </div>
                 </div> */}
 
-<div className="modal">
+{/* <div className="modal">
                   <div className="overlay"> </div>
                   <div className="interest-container02">
                     <div className="interest-container-innerd">
@@ -431,7 +431,7 @@ function Landingpage() {
                     </div>
                     <button className="interest-container-btn">Save</button>
                   </div>
-                </div>
+                </div> */}
 
               <div className="sign-login-link-covers">
                 <Link
