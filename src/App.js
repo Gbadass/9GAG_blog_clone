@@ -8,12 +8,14 @@ import Landingpage from "./component/Landingpage";
 import Landingpagenavbar from "./component/Landingpagenavbar";
 import Profile from "./component/Profile";
 import Singlepostpage from "./component/Singlepostpage";
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 
 function App(){
   return(
     <div>
+      <ChakraProvider>
       <BrowserRouter>
       <Routes>
       <Route path="/" element={<Home/>}/>
@@ -28,6 +30,7 @@ function App(){
 
       </Routes>
       </BrowserRouter>
+      </ChakraProvider>
 
 
     </div>

@@ -57,6 +57,9 @@ import image01 from "./images/1688528667.8369_5YWy3Y_100x100.jpg"
 
 
 function Section1(){
+
+  
+
   return(
     <div>
       <section className="section01-sect">

@@ -545,6 +545,20 @@ header {
   justify-content: space-between;
 }
 
+
+.section02-innerd1-div1-innerd-innerdiv1-innerddd {
+  border: 0.5px solid rgb(82, 82, 82);
+  width: 300px;
+  margin-left: 40px;
+  margin-top: 40px;
+  height: 50px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
 .section02-innerd1-div1-innerd-innerdiv1-innerd p {
   color: white;
   font-size: 14px;
@@ -554,6 +568,7 @@ header {
 .caret-down {
   color: grey;
   margin-right: 20px;
+  /* position: absolute; */
 }
 
 .section02-innerd1-div1-innerd-innerdiv1-innerd-input {
@@ -594,10 +609,16 @@ header {
   margin-top: 45px;
 }
 
+.image-icon-div{
+  display: flex;
+  justify-content: center;
+}
+
 .centered-div-p1 {
   color: white;
   font-size: 14px;
   margin-top: 15px;
+  margin-bottom: 20px;
 }
 
 .centered-div-image-input {
@@ -648,7 +669,7 @@ header {
 
 .choose-file-button {
   background-color: #0077ff;
-  margin-top: 15px;
+  /* margin-top: 25px; */
   padding: 10px;
   color: white;
   border-radius: 20px;
@@ -665,6 +686,8 @@ header {
   width: 550px;
   background-color: #141414;
   border: 0.5px solid rgb(82, 82, 82);
+  color: white;
+  font-size: 15px;
 }
 
 .post-butonn-div {
@@ -680,6 +703,12 @@ header {
   padding-right: 20px;
   border-radius: 20px;
   border: none;
+  color: white;
+  background-color: #0077ff;
+}
+
+.post-butonn-div button:disabled {
+
   color: grey;
   background-color: #06458d;
 }
@@ -974,6 +1003,8 @@ body .active-modal {
   background-color: #141414;
   border: 0.5px solid rgb(82, 82, 82);
   padding-left: 10px;
+  color: white;
+  font-size: 14px;
 }
 
 .login-container-btn {
@@ -985,6 +1016,24 @@ body .active-modal {
   margin-left: 30px;
   border: none;
   color: white;
+}
+
+
+
+.login-container-btn002 {
+  width: 500px;
+  background-color: #0077ff;
+  margin-top: 50px;
+  border-radius: 30px;
+  height: 45px;
+  /* margin-left: 30px; */
+  border: none;
+  color: white;
+}
+
+.login-container-btn002:disabled{
+background-color: #043063;
+color: grey;
 }
 
 .login-container02 {
@@ -1016,9 +1065,32 @@ body .active-modal {
   left: 190px;
   background-color: #141414;
   border-radius: 10px;
-  top: 297px;
+  top: 285px;
   z-index: 1;
 }
+
+.newest-divborder{
+width: 300px;
+border: 0.5px solid rgb(82, 82, 82);
+margin-left: 40px;
+margin-top: 35px;
+height: 45px;
+border-radius: 6px;
+display: flex;
+align-items: center;
+}
+
+.newest-divborder-innerd1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newest-divborder-innerd1 p{
+  color: white;
+  margin-left: 20px;
+}
+
 
 .create-post-interest-div-inner1 {
   display: flex;
@@ -1058,6 +1130,13 @@ body .active-modal {
   left: 42px;
 }
 
+.uploaded-image{
+  width: 550px;
+  margin: 0 auto;
+  margin-top: 10px;
+
+}
+
 .down-input02 {
   margin-top: 365px;
   height: 45px;
@@ -1066,6 +1145,8 @@ body .active-modal {
   width: 550px;
   background-color: #141414;
   border: 0.5px solid rgb(82, 82, 82);
+  color: white;
+  font-size: 15px;
 }
 
 .add-border-bottom {
@@ -1476,6 +1557,17 @@ body .active-modal {
   border-radius: 30px;
   height: 45px;
   margin-left: 30px;
+  border: none;
+  color: white;
+}
+
+.age-container-btn02 {
+  width: 500px;
+  background-color: #0077ff;
+  margin-top: 20px;
+  border-radius: 30px;
+  height: 45px;
+  /* margin-left: 30px; */
   border: none;
   color: white;
 }
@@ -1923,6 +2015,15 @@ body .active-modal {
 
 .emoji-containerrr {
   display: flex;
+}
+
+.menulist-chakra{
+  background-color: #141414;
+}
+
+.chakra-menu-container{
+  margin-left: 50px;
+  margin-top: 30px;
 }
 
 @media only screen and (max-width: 768px) {

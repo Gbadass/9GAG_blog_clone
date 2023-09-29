@@ -68,11 +68,16 @@ import { IoMdMenu } from "react-icons/io";
 import { FaBell } from "react-icons/fa";
 import { MdCreate } from "react-icons/md";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Landingpage() {
   const [modal, setModal] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [loginModal02, setLoginModal02] = useState(false);
+  const [agemodal, setAgeModal] = useState(false);
+  const Navigate = useNavigate();
+
 
   const toggleModal = () => {
     setModal(!modal);
@@ -91,6 +96,158 @@ function Landingpage() {
     setLoginModal(false);
     setModal(false);
   };
+
+  const toggleAgeModal = () => {
+    setAgeModal(!agemodal);
+    setLoginModal02(false);
+    setLoginModal(false);
+    setModal(false);
+  };
+
+  const [fullname, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [apiData, setApiData] = useState();
+  const [loginemail, setLoginEmail] = useState("");
+  const [loginpassword, setLoginPassword] = useState("");
+  const [age, setAge] = useState("");
+  const [newage, setNewAge]=useState()
+  let userData = [];
+  let LoginUserData = {};
+  let interestData = {};
+  let ageData=[]
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    if (name === "fullname") {
+      setFullName(value);
+    } else if (name === "email") {
+      setEmail(value);
+    } else if (name === "password") {
+      setPassword(value);
+    }
+  };
+
+  const handleAgeChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    if (name === "age") {
+      setAge(value);
+    } 
+  };
+
+  const handleLoginInputChange = (e) => {
+    const { name, value } = e.target;
+
+    if (name === "email02") {
+      setLoginEmail(value);
+    } else if (name === "password02") {
+      setLoginPassword(value);
+    }
+  };
+
+  const isSignupDisabled = !fullname || !email || !password;
+  const isLoginDisabled = !loginemail || !loginpassword;
+  const isAgeDisabled = !age;
+
+  const handleAgeSubmit = (e) => {
+    e.preventDefault();
+    if (age) {
+      ageData={
+        age:age
+      }
+      console.log(age)
+    }
+    const userID = localStorage.getItem('userrId')
+
+    fetch(`http://localhost:8000/api/v1/users/${userID}`, {
+      method: "PUT",
+      headers: { "Content-Type": "Application/Json" },
+      body: JSON.stringify(ageData),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setNewAge(data);
+        alert("update succesful");
+        // toggleAgeModal();
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log("error updating age", error);
+      });
+
+      Navigate('/')
+
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (fullname && email && password) {
+      userData = {
+        fullname: fullname,
+        email: email,
+        phone: "0000000000",
+        password: password
+      };
+      console.log(userData);
+    }
+
+    fetch(`http://localhost:8000/api/v1/users`, {
+      method: "POST",
+      headers: { "Content-Type": "Application/Json" },
+      body: JSON.stringify(userData),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setApiData(data);
+        alert("signUp succesful");
+        const userId = data.userId;
+        localStorage.setItem("userrId", userId);
+        toggleAgeModal();
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log("error signing up", error);
+      });
+  };
+
+  const handleLoginSubmit = (e) => {
+    e.preventDefault();
+    console.log(loginemail, loginpassword);
+    if (loginemail && loginpassword) {
+      LoginUserData = {
+        email: loginemail,
+        password: loginpassword,
+      };
+      console.log(LoginUserData);
+    }
+
+    fetch(`http://localhost:8000/api/v1/users/auth`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(LoginUserData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.msg === "login succesfull") {
+          alert("Login successful");
+          const userData = data.user;
+          const userId = data.userId;
+          localStorage.setItem("userrId", userId);
+          console.log(userData);
+          console.log(userId);
+          Navigate("/");
+        } else {
+          alert("Invalid credentials. Please check your email and password.");
+        }
+      })
+      .catch((error) => {
+        console.log("Error message", error);
+      });
+  };
+
+
 
   return (
     <div>
@@ -199,27 +356,47 @@ function Landingpage() {
                     <hr className="login-container-hr" />
 
                     <div className="login-container-input-divs">
-                      <form action="">
+                      <form action="" onSubmit={handleSubmit}>
                         <input
+                          value={fullname}
+                          onChange={handleInputChange}
                           className="login-container-input-divs-inpt1"
                           placeholder="Full name"
+                          name="fullname"
                           type="text"
+                          required
                         />{" "}
                         <br /> <br />
                         <input
+                          value={email}
+                          onChange={handleInputChange}
                           className="login-container-input-divs-inpt1"
                           placeholder="Email address"
-                          type="text"
+                          name="email"
+                          type="email"
+                          required
                         />{" "}
                         <br /> <br />
                         <input
+                          value={password}
+                          onChange={handleInputChange}
                           className="login-container-input-divs-inpt1"
                           placeholder="Password"
-                          type="text"
+                          name="password"
+                          type="password"
+                          required
                         />
+                        <button
+                          className="login-container-btn002"
+                          type="submit"
+                          disabled={isSignupDisabled}
+                          onClick={handleSubmit}
+                        >
+                          Sign up
+                        </button>
                       </form>
                     </div>
-                    <button className="login-container-btn">Sign up</button>
+                    {/* <button className="login-container-btn">Sign up</button> */}
                     <div className="member-login-div">
                       <p className="member-login-div-p1"> Already a member?</p>
                       <Link
@@ -242,7 +419,7 @@ function Landingpage() {
                         onClick={toggleLogin02}
                         className="signup-login-container-cancle-icon"
                       />
-                      <p className="login-container-p1">Sign up</p>
+                      <p className="login-container-p1">Log in</p>
                     </div>
                     <hr className="login-container-hr" />
 
@@ -266,21 +443,36 @@ function Landingpage() {
                     </div>
 
                     <div className="login-container-input-divs">
-                      <form action="">
+                      <form action="" onSubmit={handleLoginSubmit}>
                         <input
                           className="login-container-input-divs-inpt1"
+                          value={loginemail}
                           placeholder="Email address"
                           type="text"
+                          name="email02"
+                          onChange={handleLoginInputChange}
+                          required
                         />
                         <br /> <br />
                         <input
                           className="login-container-input-divs-inpt1"
+                          value={loginpassword}
                           placeholder="Password"
-                          type="text"
+                          type="password"
+                          name="password02"
+                          onChange={handleLoginInputChange}
+                          required
                         />
+                        <button
+                          className="login-container-btn002"
+                          disabled={isLoginDisabled}
+                          type="submit"
+                        >
+                          Log in
+                        </button>
                       </form>
                     </div>
-                    <button className="login-container-btn">Sign up</button>
+
                     <div className="member-login-div02">
                       <Link className="member-login-div-link">
                         Forget Password
@@ -290,7 +482,8 @@ function Landingpage() {
                 </div>
               )}
 
-{/* <div className="modal">
+              {agemodal && (
+                <div className="modal">
                   <div className="overlay"> </div>
                   <div className="age-container02">
                     <div className="login-container-innerd">
@@ -301,7 +494,9 @@ function Landingpage() {
                       <p className="login-container-p1">Verify your age</p>
                     </div>
                     <hr className="login-container-hr" />
-                    <p className="above16-age">You must be at least 16 years old to use 9GAG</p>
+                    <p className="above16-age">
+                      You must be at least 16 years old to use 9GAG
+                    </p>
 
                     <div className="age-container-input-divs">
                       <form action="">
@@ -309,129 +504,23 @@ function Landingpage() {
                           className="login-container-input-divs-inpt1"
                           placeholder="Your age"
                           type="text"
+                          name="age"
+                          required
+                          onChange={handleAgeChange}
                         />
+                        <button
+                          className="age-container-btn02"
+                          disabled={isAgeDisabled}
+                          onClick={handleAgeSubmit}
+                        >
+                          Save
+                        </button>
                       </form>
                     </div>
-                    <button className="age-container-btn">Save</button>
                   </div>
-                </div> */}
+                </div>
+              )}
 
-{/* <div className="modal">
-                  <div className="overlay"> </div>
-                  <div className="interest-container02">
-                    <div className="interest-container-innerd">
-                      <p className="interest-container-p1">Interest</p>
-                      <p className="interest-container-p1">Skip</p>
-                    </div>
-                    <hr className="interest-container-hr" />
-                    <p className="above16-age">Pick 3 or more you'd like to see in your home feed.</p>
-
-                    <div className="interest-container-input-divs">
-                      
-                      <div className="interest-object-div">
-                      <div className="interest-object-div-innerd">
-                          <img src={image037} alt="" />
-                          <p className="interest-object-div-innerd-p1" >Girl NSFW</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-                                              
-                      <div className="interest-object-div2">
-                      <div className="interest-object-div-innerd">
-                          <img src={image038} alt="" />
-                          <p className="interest-object-div2-innerd-p1" >Anime NSFW</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div2-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-                        <div className="interest-object-div3">
-                      <div className="interest-object-div-innerd">
-                          <img src={image06} alt="" />
-                          <p className="interest-object-div3-innerd-p1" >Anime & Manga</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div3-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-                        <div className="interest-object-div4">
-                      <div className="interest-object-div-innerd">
-                          <img src={image07} alt="" />
-                          <p className="interest-object-div4-innerd-p1" >Latest News</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div4-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-                        <div className="interest-object-div5">
-                      <div className="interest-object-div-innerd">
-                          <img src={image08} alt="" />
-                          <p className="interest-object-div5-innerd-p1" >Girl SFW</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div5-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-                        <div className="interest-object-div6">
-                      <div className="interest-object-div-innerd">
-                          <img src={image09} alt="" />
-                          <p className="interest-object-div6-innerd-p1" >Humor</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div6-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-                        <div className="interest-object-div7">
-                      <div className="interest-object-div-innerd">
-                          <img src={image039} alt="" />
-                          <p className="interest-object-div7-innerd-p1" >Meme</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div7-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-                        <div className="interest-object-div8">
-                      <div className="interest-object-div-innerd">
-                          <img src={image012} alt="" />
-                          <p className="interest-object-div8-innerd-p1" >Gaming</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div8-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-                    
-                        <div className="interest-object-div9">
-                      <div className="interest-object-div-innerd">
-                          <img src={image013} alt="" />
-                          <p className="interest-object-div9-innerd-p1" > WTF</p>
-                          </div>
-                          <div className="interest-object-div-innerd">
-                          <button className="interest-object-div9-innerd-btn">Follow</button>
-                          </div>
-                        
-                        </div>
-
-
-                    </div>
-                    <button className="interest-container-btn">Save</button>
-                  </div>
-                </div> */}
 
               <div className="sign-login-link-covers">
                 <Link
@@ -445,13 +534,11 @@ function Landingpage() {
               </div>
             </div>
             <div className="profile-frame"></div>
-       
+
             <div className="post-frame" onClick={toggleModal}>
               <MdCreate className="write-icon" />
               <p className="post-p">Post</p>
             </div>
-       
-
           </div>
         </header>
       </nav>
@@ -895,9 +982,6 @@ function Landingpage() {
               <button className="tips-category-btn">iphone</button>
               <button className="tips-category-btn">stick</button>
               <button className="tips-category-btn">one piece</button>
-              {/* <button className="tips-category-btn">trump</button>
-            <button className="tips-category-btn">latest news</button>
-            <button className="tips-category-btn">most commented</button> */}
             </div>
             <div className="comments-and-like-div">
               <div className="comments-and-like-div-innerd1">
