@@ -4,6 +4,8 @@ import image1 from "./images/1683179404.4309_eXYZuQ_100x100.jpg";
 import image2 from "./images/1683177960.4258_YLeRan_100x100.jpg";
 import { useState, useEffect } from "react";
 import { useImage } from "@chakra-ui/react";
+import { IoCloseCircle } from "react-icons/io5";
+
 
 function Createpost() {
   const [interestModal, setInterestModal] = useState(false);
@@ -140,8 +142,8 @@ function Createpost() {
 
   const selectedInterest = (interest,category) => {
     setToggleInterest(interest,category);
+    console.log(interest)
     localStorage.setItem('postCategoryId', category)
-    console.log(category)
  
     
   };
@@ -178,7 +180,7 @@ function Createpost() {
                   <div className="create-post-interest-div-inner1">
                   <img
                     className="create-post-interest-div-inner1-img"
-                    src={image1}
+                    src={item.img}
                     alt=""
                   />
                   <p className="create-post-interest-div-inner1-p1" onClick={()=>selectedInterest(item.name,item._id)}>{item.name}</p>
@@ -213,14 +215,19 @@ function Createpost() {
                     <div>
 
                       {imageFile?(
+                        <div>
                                   <img
                                   src={imageFile}
                                   alt="Uploaded"
                                   className="uploaded-image"
                                 />
+                                <IoCloseCircle className="close-icon"/>
+                                </div>
                       ):(
                         <div className="image-insert-cover">
+                             
                         <div className="centered-div">
+                     
                           <div className="image-icon-div">
                           <FaFileImage className="image-icon" />
                           </div>
@@ -228,7 +235,6 @@ function Createpost() {
                           <p className="centered-div-p1">
                             Choose a photo or video to upload
                           </p>
-                          {/* <input type="file" className="centered-div-image-input" /> */}
                           <label
                             className="choose-file-button"
                             htmlFor="imageUpload"
@@ -265,6 +271,7 @@ function Createpost() {
 
                       <input
                         className="down-input"
+                        placeholder="Add at least 1 tag"
                         type="text"
                         value={tag}
                         name="tag"
@@ -285,20 +292,17 @@ function Createpost() {
 
                   {textInput && (
                     <div>
-                      <input
-                        className="image-insert-cover02"
+                      <textarea  id="" cols="30" rows="10"                         className="image-insert-cover02"
                         type="text"
+                        placeholder="Text (optional)"
                         value={text}
                         name="text"
                         onChange={handlePostInput}
-                        required
-                      />
-                      {/* <input
-                        className="down-input02"
-                      /> */}
-                      {/* <div className="post-butonn-div">
-                        <button className="" type="submit">Post</button>
-                      </div> */}
+                        required>
+                        
+
+                      </textarea>
+
                     </div>
                   )}
                 </form>
