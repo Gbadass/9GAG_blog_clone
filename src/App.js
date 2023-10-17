@@ -24,7 +24,7 @@ function App(){
         <Route path="/landingpage" element={<Landingpage/>}/>
         <Route path="/landingpagenavbar" element={<Landingpagenavbar/>}/>
         <Route path="/profile" element={<Profile/>}/>
-        <Route path="/singlepostpage" element={<Singlepostpage/>}/>
+        <Route path="/singlepostpage/:postId" element={<Singlepostpage/>}/>
        
         {/* <Route path="/" element={<Section1/>}/> */}
 

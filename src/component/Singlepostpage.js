@@ -56,11 +56,31 @@ import image01 from "./images/1688528667.8369_5YWy3Y_100x100.jpg"
  import image035 from "./images/7103302163924574107.jpeg"
  import image036 from "./images/7103302163924574107.jpeg"
  import Navigation from "./Navigation";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 
 
 
 function Singlepost() {
+
+  const {postId} = useParams()
+  const[singlepostdata,setSinglePostData]=useState()
+  const backend = "http://localhost:8000/images";
+
+
+  useEffect(()=>{
+    fetch(`http://localhost:8000/api/v1/posts/${postId}`)
+    .then((resp)=>resp.json())
+    .then((data)=>{
+      setSinglePostData(data)
+      console.log(data)
+    })
+    .catch((error)=> {
+      console.log(error.message)
+    })
+  },[])
+
   return(
 <div>
   <Navigation/>
@@ -87,276 +107,364 @@ function Singlepost() {
           <div className="section01-sect-div1-innnerd2">
             <div className="section01-sect-div1-innnerd2-innerd1">
               <div className="following-p1">
+                <div className="following-edit-div">
                 <p>Following</p>
+                <p>Edit</p>
 
-                <div className="tag-and-p-cover">
-                <BsTag className="tag01"/>
-                <p>boobs</p>
                 </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image01} alt="" />
-                <p>Girl NSFW</p>
+       
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image06}
+                      alt=""
+                    />
+                    <p>Anime & Manga</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="tag-and-p-cover">
-                <BsTag className="tag01"/>
-                <p>breakimg news</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <BsTag className="tag01"/>
-                <p>9gag news</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <BsTag className="tag01"/>
-                <p>bitcoin</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <BsTag className="tag01"/>
-                <p>crypto</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image02} alt="" />
-                <p>Wholesome</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image03} alt="" />
-                <p>Comic</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image04} alt="" />
-                <p>Gaming</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image05} alt="" />
-                <p>Humor</p>
-                </div>
-
-
-                
-
-              </div>
-              <div className="edit-p1">
-                <p> Edit</p>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                
-               
               </div>
             </div>
           </div>
           <div className="section01-sect-div1-innnerd3">
-          <div className="section01-sect-div1-innnerd3-innerd1">
+            <div className="section01-sect-div1-innnerd3-innerd1">
               <div className="following-p1">
                 <p>Interest</p>
 
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image06} alt="" />
-                <p>Anime & Manga</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image07} alt="" />
-                <p>Latest news</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image08} alt="" />
-                <p>Girl SFW</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image09} alt="" />
-                <p>Humor</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image010} alt="" />
-                <p>bitcoin</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image011} alt="" />
-                <p>Gaming</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image012} alt="" />
-                <p>WTF</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image013} alt="" />
-                <p>Relationship & Dating</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image014} alt="" />
-                <p>Motor Vehicle</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image015} alt="" />
-                <p>Animal & Pets</p>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image06}
+                      alt=""
+                    />
+                    <p>Anime & Manga</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
 
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image016} alt="" />
-                <p>Science & Tech</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image017} alt="" />
-                <p>Comic</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image018} alt="" />
-                <p>Wholesome</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image019} alt="" />
-                <p>Sports</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image020} alt="" />
-                <p>Ask or Tell</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image021} alt="" />
-                <p>Movies & Tv</p>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image07}
+                      alt=""
+                    />
+                    <p>Latest News</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
 
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image022} alt="" />
-                <p>Cat</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image023} alt="" />
-                <p>Food & drink</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image024} alt="" />
-                <p>Lifestyle</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image025} alt="" />
-                <p>Superhero</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image026} alt="" />
-                <p>Crypto</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image027} alt="" />
-                <p>Random</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image028} alt="" />
-                <p>Woah</p>
-                </div>
-                <div className="tag-and-p-cover">
-                <img className="tag-and-p-cover-image01" src={image029} alt="" />
-                <p>Russso Ukrian War</p>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image08}
+                      alt=""
+                    />
+                    <p>Girl SFW</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
 
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image09}
+                      alt=""
+                    />
+                    <p>Humor</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
+                </div>
 
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image010}
+                      alt=""
+                    />
+                    <p>Bitcoin</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
+                </div>
 
-                
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image011}
+                      alt=""
+                    />
+                    <p>Gaming</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
+                </div>
 
-              </div>
-              <div className="edit-p1">
-                {/* <p> Edit</p>  */}
-                 <div className="pin-cover-div2">
-                <BsPin className="pin-tag2"/>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image012}
+                      alt=""
+                    />
+                    <p>WTF</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div2">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image013}
+                      alt=""
+                    />
+                    <p>Relationship & Dating</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                 <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image014}
+                      alt=""
+                    />
+                    <p>Motor Vehicle</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image015}
+                      alt=""
+                    />
+                    <p>Animal & Pet</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image016}
+                      alt=""
+                    />
+                    <p>Science & Tech</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                 <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image017}
+                      alt=""
+                    />
+                    <p>Comic</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image018}
+                      alt=""
+                    />
+                    <p>Wholesome</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image019}
+                      alt=""
+                    />
+                    <p>Sport</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image020}
+                      alt=""
+                    />
+                    <p>Ask & Tell</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image021}
+                      alt=""
+                    />
+                    <p>Movies & Tv</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image022}
+                      alt=""
+                    />
+                    <p>Cat</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image023}
+                      alt=""
+                    />
+                    <p>Food & Drink</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image024}
+                      alt=""
+                    />
+                    <p>Lifestyle</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image025}
+                      alt=""
+                    />
+                    <p>Superhero</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image026}
+                      alt=""
+                    />
+                    <p>Crypto</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image027}
+                      alt=""
+                    />
+                    <p>Random</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image028}
+                      alt=""
+                    />
+                    <p>Woah</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
+                <div className="tag-and-p-cover-outtercover">
+                  <div className="tag-and-p-cover">
+                    <img
+                      className="tag-and-p-cover-image01"
+                      src={image029}
+                      alt=""
+                    />
+                    <p>Russso Ukrian War</p>
+                  </div>
+                  <div className="pin-cover-div2">
+                    <BsPin className="pin-tag2" />
+                  </div>
                 </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div>
-                <div className="pin-cover-div">
-                <BsPin className="pin-tag"/>
-                </div> 
-                 
-                
-               
               </div>
             </div>
           </div>
@@ -397,9 +505,9 @@ function Singlepost() {
           <div className="blog-post-div">
             <div className="blog-post-div-inner1">
               <div className="blog-post-div-inner1-div102">
-              <img className="blog-post-image01" src={image031} alt="" />
+              <img className="blog-post-image01" src={singlepostdata?.category_id.img} alt="" />
               <div className="blog-post-div-inner1-div102-innerd1">
-              <p className="blog-post-div-inner1-p1">Humor</p> 
+              <p className="blog-post-div-inner1-p1">{singlepostdata?.category_id.name}</p> 
               <p className="blog-post-div-inner1-p2-02"> sindriragners 16h</p>
               </div>
       
@@ -412,9 +520,9 @@ function Singlepost() {
               </div>
             </div>
             <p className="blog-post-div-inner1-p2-03">cheared by</p>
-            <h1 className="blog-post-div-h1">have you ever tried to eat clock?</h1>
+            <h1 className="blog-post-div-h1">{singlepostdata?.title}</h1>
             <div className="blog-post-div-inner2">
-              <img className="blog-post-div-inner2-img" src={image032} alt="" />
+              <img className="blog-post-div-inner2-img" src={backend + "/" + singlepostdata?.img} alt="" />
             </div>
             <div className="tips-category2">
             <button className="tips-category-btn">apple</button>
@@ -427,7 +535,7 @@ function Singlepost() {
               <div className="comments-and-like-div-innerd1">
               <div className="comments-and-like-div-innerd1">
                 <ImArrowUp className="comments-and-like-div-innerd1-arrow-up"/>
-                <p className="comments-and-like-div-innerd1-p1">5.9K</p>
+                <p className="comments-and-like-div-innerd1-p1">{singlepostdata?.likes.length}</p>
                 <ImArrowDown className="comments-and-like-div-innerd1-arrow-down"/>
               </div>
               <div className="comments-and-like-div-innerd2">
@@ -462,7 +570,7 @@ function Singlepost() {
             </div>
             <div className="comments-and-like-div02-comment-div">
                 <div className="comments-and-like-div02-button-divs">
-                    <button className="comments-and-like-div02-button-divs-btn"> <span>Comments</span> 234 </button>
+                    <button className="comments-and-like-div02-button-divs-btn"> <span>Comments</span> {singlepostdata?.comments_id.length} </button>
                     <button className="comments-and-like-div02-button-divs-btn2">Related</button>
                 </div>
               </div>
@@ -484,11 +592,12 @@ function Singlepost() {
 
               </div>
 
+                {singlepostdata?.comments_id && singlepostdata?.comments_id.map((item)=>(
               <div className="comment-section-bottom-commentbody">
               <img  src={image028} alt="" />
                 <div className="comment-section-bottom-commentbody-innerd">
                   <p className="gbadass-bold">gbadass <span>13h</span></p>
-                  <p className="comment-section-bottom-commentbody-comments">And due to the small population of Iceland 60% of the viewers said: “oh, uncle Sigurður <br /> threw a tantrum again”</p>
+                  <p className="comment-section-bottom-commentbody-comments">{item.text}</p>
 
                   <div className="comment-section-bottom-reply-and-icons">
                 <p>Reply</p>
@@ -505,6 +614,8 @@ function Singlepost() {
               </div>
                 </div>
               </div>
+                ))}
+
 
 
 

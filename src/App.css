@@ -212,6 +212,11 @@ header {
   font-size: 15px;
 }
 
+.following-edit-div{
+  display: flex;
+  justify-content: space-between;
+}
+
 .interest-image-and-p{
   display: flex;
   align-items: center;
